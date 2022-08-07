@@ -11,10 +11,10 @@ s.bind((hostname, port))
 print('Listening at {}'.format(s.getsockname()))
 
 
-MAX_SIZE_BYTES = 65535 # Mazimum size of a UDP datagram
+MAX_SIZE_BYTES = 65535 
 
 while True:
-    data, clientAddress = s.recvfrom(MAX_SIZE_BYTES)# Receive at most 65535 bytes at once
+    data, clientAddress = s.recvfrom(MAX_SIZE_BYTES)
     message = data.decode('ascii')
     uppercase_msg = message.upper()
     print('The client at {} says {!r}'.format(clientAddress, message))
